@@ -1,5 +1,4 @@
-{
-  "courses": [
+ [
     {
       "id": "1",
       "topic": "React Native Course",
@@ -85,4 +84,3 @@
       }
     }
   ]
-}
