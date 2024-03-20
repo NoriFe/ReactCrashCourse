@@ -1,0 +1,88 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "topic": "React Native Course",
+      "type": "Full-Time",
+      "description": "Join our intensive React Native course in London, UK. Learn to build mobile applications with React Native, covering fundamental concepts and advanced techniques. Taught by industry experts with hands-on projects.",
+      "location": "London, UK",
+      "price": "£750 - £900",
+      "provider": {
+        "name": "Tech Academy",
+        "description": "Tech Academy offers comprehensive technology courses for aspiring developers. Our instructors are industry professionals dedicated to providing top-notch education and practical skills.",
+        "contactEmail": "contact@techacademy.com",
+        "contactPhone": "+44 20 5555 5555"
+      }
+    },
+    {
+      "id": "2",
+      "topic": "React.js Fundamentals",
+      "type": "Part-Time",
+      "description": "Master the fundamentals of React.js with our flexible evening course in Edinburgh, Scotland. Ideal for beginners and those looking to solidify their understanding of React.js. Hands-on exercises and real-world projects included.",
+      "location": "Edinburgh, Scotland",
+      "price": "£600 - £800",
+      "provider": {
+        "name": "Code Masters",
+        "description": "Code Masters is dedicated to empowering individuals with in-demand coding skills. Our courses are designed to be accessible and engaging, taught by experienced developers passionate about teaching.",
+        "contactEmail": "contact@codemasters.com",
+        "contactPhone": "+44 131 555 5555"
+      }
+    },
+    {
+      "id": "3",
+      "topic": "Advanced React Workshop",
+      "type": "Full-Time",
+      "description": "Take your React skills to the next level with our advanced workshop in Manchester, UK. Dive deep into topics such as Redux, GraphQL, and performance optimization. Suitable for experienced developers.",
+      "location": "Manchester, UK",
+      "price": "£900 - £1100",
+      "provider": {
+        "name": "DevHub",
+        "description": "DevHub is a leading provider of technology workshops and training programs. Our expert instructors deliver cutting-edge content to help developers stay ahead in their careers.",
+        "contactEmail": "contact@devhub.co.uk",
+        "contactPhone": "+44 161 555 5555"
+      }
+    },
+    {
+      "id": "4",
+      "topic": "React Native App Design",
+      "type": "Full-Time",
+      "description": "Learn to design stunning mobile applications with React Native in Birmingham, UK. This course covers UI/UX principles, prototyping, and user testing. Perfect for designers and developers alike.",
+      "location": "Birmingham, UK",
+      "price": "£800 - £1000",
+      "provider": {
+        "name": "DesignTech",
+        "description": "DesignTech specializes in design-focused technology courses for creative professionals. Our hands-on workshops empower participants to create beautiful and user-friendly digital experiences.",
+        "contactEmail": "contact@designtech.co.uk",
+        "contactPhone": "+44 121 555 5555"
+      }
+    },
+    {
+      "id": "5",
+      "topic": "React.js Crash Course",
+      "type": "Part-Time",
+      "description": "Get up to speed with React.js quickly in Leeds, UK. This crash course covers the basics of React.js development in just one weekend. Perfect for beginners or those looking for a refresher.",
+      "location": "Leeds, UK",
+      "price": "£400 - £500",
+      "provider": {
+        "name": "CodeLab",
+        "description": "CodeLab offers fast-paced coding bootcamps and workshops for individuals looking to kickstart their careers in tech. Our courses are designed to provide practical skills for real-world projects.",
+        "contactEmail": "contact@codelab.co.uk",
+        "contactPhone": "+44 113 555 5555"
+      }
+    },
+    {
+      "id": "6",
+      "topic": "React.js for Beginners",
+      "type": "Part-Time",
+      "description": "Start your journey into React.js development with our beginner-friendly course in Glasgow, Scotland. Learn the basics of building web applications with React.js and gain hands-on experience.",
+      "location": "Glasgow, Scotland",
+      "price": "£500 - £600",
+      "provider": {
+        "name": "CodeStart",
+        "description": "CodeStart is committed to making coding education accessible to everyone. Our friendly instructors guide students through the fundamentals of programming in a supportive learning environment.",
+        "contactEmail": "contact@codestart.co.uk",
+        "contactPhone": "+44 141 555 5555"
+      }
+    }
+  ]
+}
