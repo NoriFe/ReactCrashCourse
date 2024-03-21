@@ -1,5 +1,7 @@
-import React from 'react'
-import { useState } from 'react'
+import React from 'react';
+import { useState } from 'react';
+import { FaMapMarker } from 'react-icons/fa';
+
 const Course = ( { courses } ) => {
 
   const [showFullDescription, setShowFullDescription] = useState(false);
@@ -31,7 +33,7 @@ const Course = ( { courses } ) => {
 
       <div className="flex flex-col lg:flex-row justify-between mb-4">
         <div className="text-orange-700 mb-3">
-          <i className="fa-solid fa-location-dot text-lg"></i>
+          <FaMapMarker className="inline-block text-lg mr-1 mb-1" />
           {  courses.location }
         </div>
         <a
