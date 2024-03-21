@@ -1,6 +1,14 @@
 import React from 'react'
-import Card from './Card'
+import { useState } from 'react'
 const Course = ( { courses } ) => {
+
+  const [showFullDescription, setShowFullDescription] = useState(false);
+
+  let description = courses.description;
+
+  if (!showFullDescription) {
+    description = description.substring(0, 90) + ' ...';
+  }
   return (
   <div className="bg-white rounded-xl shadow-md relative">
     <div className="p-4">
@@ -10,8 +18,12 @@ const Course = ( { courses } ) => {
       </div>
 
       <div className="mb-5">
-          <div className="text-gray-600 my-2">{ courses.provider.name }</div>{ courses.description }
+          <div className="text-gray-600 my-2">{ courses.provider.name }</div>
+          { description }
       </div>
+
+      <button className ="text-indigo-500 mb-5 hover:text-indigo-600" onClick={ () => setShowFullDescription ((prevState) => !prevState)} > {showFullDescription ? 'Less' : 'More' }
+        </button>
 
       <h3 className="text-indigo-500 mb-2">{ courses.price }</h3>
 
