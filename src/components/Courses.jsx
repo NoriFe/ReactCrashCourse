@@ -1,10 +1,26 @@
 import React from 'react';
-import courses from '../courses.json';
 import Course from './Course';
+import { useState, useEffect } from 'react';
 
 const Courses = ({ isHome = false }) => { 
+  const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const courseListing = isHome ? courses.slice(0, 3) : courses;
+  useEffect(() => { 
+    const fetchCourses = async () => {
+    try {
+      const res = await fetch('https://localhost:8000/courses');
+      const data = await res.json();
+      setCourses(data);
+    } catch (error) {
+      console.log('Error fetching data', error);
+    } finally {
+      setLoading(false);
+    }     
+  }
+  fetchCourses();
+  
+}, []); 
 
   return (    
       <section className="bg-blue-50 px-4 py-10">
