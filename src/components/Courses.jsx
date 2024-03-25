@@ -9,11 +9,11 @@ const Courses = ({ isHome = false }) => {
   useEffect(() => { 
     const fetchCourses = async () => {
     try {
-      const res = await fetch('https://localhost:8000/courses');
+      const res = await fetch('http://localhost:8000/courses');
       const data = await res.json();
       setCourses(data);
     } catch (error) {
-      console.log('Error fetching data', error);
+      console.log('Error fetching data :', error);
     } finally {
       setLoading(false);
     }     
@@ -29,9 +29,14 @@ const Courses = ({ isHome = false }) => {
             { isHome ? 'Recent Courses' : 'Browse All Courses' }
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {courseListing.map((course) => (
+              {loading ? (<h2>Loading...</h2>) : ( 
+                <>
+                  {courses.map((course) => (
                     <Course key={course.id} courses={course} />
-                ))}        
+                ))} 
+                </>
+              ) }
+                     
             </div>
         </div>
       </section>
