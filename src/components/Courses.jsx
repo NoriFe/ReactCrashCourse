@@ -1,6 +1,8 @@
 import React from 'react';
 import Course from './Course';
 import { useState, useEffect } from 'react';
+import Spinner from './Spinner';
+
 
 const Courses = ({ isHome = false }) => { 
   const [courses, setCourses] = useState([]);
@@ -29,7 +31,7 @@ const Courses = ({ isHome = false }) => {
             { isHome ? 'Recent Courses' : 'Browse All Courses' }
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {loading ? (<h2>Loading...</h2>) : ( 
+              { loading ? (<Spinner loading={loading}/>) : ( 
                 <>
                   {courses.map((course) => (
                     <Course key={course.id} courses={course} />
