@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        'card-bg': '', // set valuse later
+      },
       fontFamily: {
         sans: ['Roboto', 'sans-serif']
       },
