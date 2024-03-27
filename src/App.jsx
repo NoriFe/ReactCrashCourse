@@ -7,13 +7,15 @@ import ErrorPage from './pages/ErrorPage';
 import CoursePage, { courseLoader } from './pages/CoursePage';
 import AddCoursePage from './pages/AddCoursePage';
 
-
+const addCourse =(newCourse) => {
+  console.log('newCourse', newCourse);
+}
 const router = createBrowserRouter(
   createRoutesFromElements( 
   <Route path='/' element={< MainLayout />}>,
     <Route index element={< HomePage />} />
     <Route path='/courses' element={< CoursesPage />} />
-    <Route path='/add-course' element={< AddCoursePage />} />
+    <Route path='/add-course' element={< AddCoursePage addCourseSubmit={addCourse}/>} />
     <Route path='/courses/:id' element={< CoursePage />} loader={courseLoader} />
     <Route path='*' element={< ErrorPage />} />
    

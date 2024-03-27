@@ -1,16 +1,42 @@
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const AddCoursePage = () => {
+const AddCoursePage = ({ addCourseSubmit }) => {
   const [topic, setTopic] = useState('');
-  const [type, setType] = useState('');
+  const [type, setType] = useState('Full-Time');
   const [location, setLocation] = useState('');
   const [description, setDescription] = useState('');
-  const [price, setPrice] = useState('');
+  const [price, setPrice] = useState('Under £100');
   const [companyName, setCompanyName] = useState('');
   const [companyDescription, setCompanyDescription] = useState('');
   const [contactEmail, setContactEmail] = useState('');
   const [contactPhone, setContactPhone] = useState('');
+
+  const navigate = useNavigate();
+
+  const submitForm = (event) => {
+    event.preventDefault();
+
+    const newCourse = {
+      topic,
+      type,
+      location,
+      description,
+      price,
+      provider: {
+        name: companyName,
+        description: companyDescription,
+        contactEmail,
+        contactPhone,
+      },
+      addCourseSubmit(newCourse);
+
+      return navigate('/courses');
+    };
+
+    console.log(newCourse);
+  }
 
   return (
     <section className="bg-indigo-50">
@@ -18,12 +44,12 @@ const AddCoursePage = () => {
         <div
           className="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0"
         >
-          <form>
+          <form onSubmit={submitForm}>
             <h2 className="text-3xl text-center font-semibold mb-6">Add Job</h2>
 
             <div className="mb-4">
               <label htmlFor="type" className="block text-gray-700 font-bold mb-2"
-                >Job Type</label
+                >Course Type</label
               >
               <select
                 id="type"
@@ -42,7 +68,7 @@ const AddCoursePage = () => {
 
             <div className="mb-4">
               <label className="block text-gray-700 font-bold mb-2"
-                >Job Listing Name</label
+                >Course Listing Name</label
               >
               <input
                 type="text"
@@ -51,6 +77,8 @@ const AddCoursePage = () => {
                 className="border rounded w-full py-2 px-3 mb-2"
                 placeholder="eg. Beautiful Apartment In Miami"
                 required
+                value={topic}
+                onChange={(event) => setTopic(event.target.value)}
               />
             </div>
             <div className="mb-4">
@@ -79,18 +107,31 @@ const AddCoursePage = () => {
                 name="salary"
                 className="border rounded w-full py-2 px-3"
                 required
+                value={price}
+                onChange={(event) => setPrice(event.target.value)}
               >
-                <option value="Under $50K">Under $50K</option>
-                <option value="$50K - 60K">$50K - $60K</option>
-                <option value="$60K - 70K">$60K - $70K</option>
-                <option value="$70K - 80K">$70K - $80K</option>
-                <option value="$80K - 90K">$80K - $90K</option>
-                <option value="$90K - 100K">$90K - $100K</option>
-                <option value="$100K - 125K">$100K - $125K</option>
-                <option value="$125K - 150K">$125K - $150K</option>
-                <option value="$150K - 175K">$150K - $175K</option>
-                <option value="$175K - 200K">$175K - $200K</option>
-                <option value="Over $200K">Over $200K</option>
+                <option value="Under £100">Under £100</option>
+                <option value="£100 - £125">£100 - £125</option>
+                <option value="£125 - £150">£125 - £150</option>
+                <option value="£150 - £175">£150 - £175</option>
+                <option value="£175 - £200">£175 - £200</option>
+                <option value="£200 - £250">£200 - £250</option>
+                <option value="£250 - £300">£250 - £300</option>
+                <option value="£300 - £350">£300 - £350</option>
+                <option value="£350 - £400">£350 - £400</option>
+                <option value="£400 - £450">£400 - £450</option>
+                <option value="£450 - £500">£450 - £500</option>
+                <option value="£500 - £550">£500 - £550</option>
+                <option value="£550 - £600">£550 - £600</option>
+                <option value="£600 - £650">£600 - £650</option>
+                <option value="£650 - £700">£650 - £700</option>
+                <option value="£700 - £750">£700 - £750</option>
+                <option value="£750 - £800">£750 - £800</option>
+                <option value="£800 - £850">£800 - £850</option>
+                <option value="£850 - £900">£850 - £900</option>
+                <option value="£900 - £950">£900 - £950</option>
+                <option value="£950 - £1000">£950 - £1000</option>
+                <option value="Over £1000">Over £1000</option>
               </select>
             </div>
 
@@ -104,7 +145,9 @@ const AddCoursePage = () => {
                 name='location'
                 className='border rounded w-full py-2 px-3 mb-2'
                 placeholder='Company Location'
-                required           
+                required
+                value={location}
+                onChange={(event) => setLocation(event.target.value)}        
               />
             </div>
 
@@ -120,6 +163,8 @@ const AddCoursePage = () => {
                 name="company"
                 className="border rounded w-full py-2 px-3"
                 placeholder="Company Name"
+                value={companyName}
+                onChange={(event) => setCompanyName(event.target.value)}
               />
             </div>
 
@@ -135,6 +180,8 @@ const AddCoursePage = () => {
                 className="border rounded w-full py-2 px-3"
                 rows="4"
                 placeholder="What does your company do?"
+                value={companyDescription}
+                onChange={(event) => setCompanyDescription(event.target.value)}
               ></textarea>
             </div>
 
@@ -151,6 +198,8 @@ const AddCoursePage = () => {
                 className="border rounded w-full py-2 px-3"
                 placeholder="Email address for applicants"
                 required
+                value={contactEmail}
+                onChange={(event) => setContactEmail(event.target.value)}
               />
             </div>
             <div className="mb-4">
@@ -165,6 +214,8 @@ const AddCoursePage = () => {
                 name="contact_phone"
                 className="border rounded w-full py-2 px-3"
                 placeholder="Optional phone for applicants"
+                value={contactPhone}
+                onChange={(event) => setContactPhone(event.target.value)}
               />
             </div>
 
@@ -173,7 +224,7 @@ const AddCoursePage = () => {
                 className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
                 type="submit"
               >
-                Add Job
+                Add Course
               </button>
             </div>
           </form>
