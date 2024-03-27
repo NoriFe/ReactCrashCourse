@@ -5,6 +5,7 @@ import MainLayout from './layouts/MainLayout';
 import CoursesPage from './pages/CoursesPage';
 import ErrorPage from './pages/ErrorPage';
 import CoursePage, { courseLoader } from './pages/CoursePage';
+import AddCoursePage from './pages/AddCoursePage';
 
 
 const router = createBrowserRouter(
@@ -12,8 +13,10 @@ const router = createBrowserRouter(
   <Route path='/' element={< MainLayout />}>,
     <Route index element={< HomePage />} />
     <Route path='/courses' element={< CoursesPage />} />
+    <Route path='/add-course' element={< AddCoursePage />} />
     <Route path='/courses/:id' element={< CoursePage />} loader={courseLoader} />
     <Route path='*' element={< ErrorPage />} />
+   
   </Route>
   )
 
