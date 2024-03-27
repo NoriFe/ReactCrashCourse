@@ -29,11 +29,10 @@ const AddCoursePage = ({ addCourseSubmit }) => {
         description: companyDescription,
         contactEmail,
         contactPhone,
-      },
-      addCourseSubmit(newCourse);
-
-      return navigate('/courses');
+      },     
     };
+    addCourseSubmit(newCourse);
+    navigate('/courses');
 
     console.log(newCourse);
   }
@@ -75,7 +74,7 @@ const AddCoursePage = ({ addCourseSubmit }) => {
                 id="title"
                 name="title"
                 className="border rounded w-full py-2 px-3 mb-2"
-                placeholder="eg. Beautiful Apartment In Miami"
+                placeholder="eg. React Developer, Data Analyst, etc"
                 required
                 value={topic}
                 onChange={(event) => setTopic(event.target.value)}
@@ -92,7 +91,7 @@ const AddCoursePage = ({ addCourseSubmit }) => {
                 name="description"
                 className="border rounded w-full py-2 px-3"
                 rows="4"
-                placeholder="Add any job duties, expectations, requirements, etc"
+                placeholder="Add any expectations, requirements, etc"
                 value={description}
                 onChange={(event) => setDescription(event.target.value)}
               ></textarea>

@@ -10,21 +10,22 @@ import AddCoursePage from './pages/AddCoursePage';
 const addCourse =(newCourse) => {
   console.log('newCourse', newCourse);
 }
-const router = createBrowserRouter(
-  createRoutesFromElements( 
-  <Route path='/' element={< MainLayout />}>,
-    <Route index element={< HomePage />} />
-    <Route path='/courses' element={< CoursesPage />} />
-    <Route path='/add-course' element={< AddCoursePage addCourseSubmit={addCourse}/>} />
-    <Route path='/courses/:id' element={< CoursePage />} loader={courseLoader} />
-    <Route path='*' element={< ErrorPage />} />
-   
-  </Route>
-  )
 
-);
 
 const App = () => {
+  const router = createBrowserRouter(
+    createRoutesFromElements( 
+    <Route path='/' element={< MainLayout />}>,
+      <Route index element={< HomePage />} />
+      <Route path='/courses' element={< CoursesPage />} />
+      <Route path='/add-course' element={< AddCoursePage addCourseSubmit={addCourse}/>} />
+      <Route path='/courses/:id' element={< CoursePage />} loader={courseLoader} />
+      <Route path='*' element={< ErrorPage />} />
+     
+    </Route>
+    )
+  
+  );
   return <RouterProvider router={router}/>  
   
 };
