@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const AddCoursePage = ({ addCourseSubmit }) => {
   const [topic, setTopic] = useState('');
@@ -32,6 +33,7 @@ const AddCoursePage = ({ addCourseSubmit }) => {
       },     
     };
     addCourseSubmit(newCourse);
+    toast.success('Course added successfully');
     navigate('/courses');
 
     console.log(newCourse);

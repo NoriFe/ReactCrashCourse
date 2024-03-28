@@ -3,6 +3,7 @@ import React from 'react';
 import { useParams, useLoaderData, useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 
 const CoursePage = ({ deleteCourse }) => {  
@@ -15,6 +16,7 @@ const CoursePage = ({ deleteCourse }) => {
     if (!confirmDelete) 
       return;
     deleteCourse(id);
+    toast.success('Course deleted successfully!')
     navigate('/courses');
   };
 

@@ -24,7 +24,10 @@ const App = () => {
 
   // delete course
   const deleteCourse = async (id) => {
-    console.log('delete course with id:', id);
+    const response = await fetch(`/courses/courses/${id}`, {
+      method: 'DELETE'    
+    });
+    return;
   };
   
   const router = createBrowserRouter(

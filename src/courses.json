@@ -83,20 +83,6 @@
         "contactEmail": "contact@codestart.co.uk",
         "contactPhone": "+44 141 555 5555"
       }
-    },
-    {
-      "id": "cbd2",
-      "topic": "test",
-      "type": "Full-Time",
-      "location": "pARIS",
-      "description": "test",
-      "price": "Under £100",
-      "provider": {
-        "name": "Noname",
-        "description": "asd",
-        "contactEmail": "wp@wp.pl",
-        "contactPhone": "077777777"
-      }
     }
   ]
 }
