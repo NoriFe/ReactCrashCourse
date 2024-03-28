@@ -10,6 +10,7 @@ import AddCoursePage from './pages/AddCoursePage';
 
 
 const App = () => {
+  // add new course
   const addCourse = async (newCourse) => {
     const response = await fetch('/courses/courses', {
       method: 'POST',
@@ -20,13 +21,19 @@ const App = () => {
     });
     return;
   };
+
+  // delete course
+  const deleteCourse = async (id) => {
+    console.log('delete course with id:', id);
+  };
+  
   const router = createBrowserRouter(
     createRoutesFromElements( 
     <Route path='/' element={< MainLayout />}>,
       <Route index element={< HomePage />} />
       <Route path='/courses' element={< CoursesPage />} />
       <Route path='/add-course' element={< AddCoursePage addCourseSubmit={addCourse}/>} />
-      <Route path='/courses/:id' element={< CoursePage />} loader={courseLoader} />
+      <Route path='/courses/:id' element={< CoursePage deleteCourse={deleteCourse}/>} loader={courseLoader} />
       <Route path='*' element={< ErrorPage />} />
      
     </Route>
