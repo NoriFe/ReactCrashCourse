@@ -7,12 +7,19 @@ import ErrorPage from './pages/ErrorPage';
 import CoursePage, { courseLoader } from './pages/CoursePage';
 import AddCoursePage from './pages/AddCoursePage';
 
-const addCourse =(newCourse) => {
-  console.log('newCourse', newCourse);
-}
 
 
 const App = () => {
+  const addCourse = async (newCourse) => {
+    const response = await fetch('/courses/courses', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newCourse),
+    });
+    return;
+  };
   const router = createBrowserRouter(
     createRoutesFromElements( 
     <Route path='/' element={< MainLayout />}>,
