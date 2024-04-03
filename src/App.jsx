@@ -6,7 +6,7 @@ import CoursesPage from './pages/CoursesPage';
 import ErrorPage from './pages/ErrorPage';
 import CoursePage, { courseLoader } from './pages/CoursePage';
 import AddCoursePage from './pages/AddCoursePage';
-
+import EditCoursePage from './pages/EditCoursePage';
 
 
 const App = () => {
@@ -36,6 +36,7 @@ const App = () => {
       <Route index element={< HomePage />} />
       <Route path='/courses' element={< CoursesPage />} />
       <Route path='/add-course' element={< AddCoursePage addCourseSubmit={addCourse}/>} />
+      <Route path='/edit-course/:id' element={< EditCoursePage />} loader={courseLoader} />
       <Route path='/courses/:id' element={< CoursePage deleteCourse={deleteCourse}/>} loader={courseLoader} />
       <Route path='*' element={< ErrorPage />} />
      
