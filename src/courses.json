@@ -32,8 +32,8 @@
       "id": "3",
       "topic": "Advanced React Workshop",
       "type": "Full-Time",
-      "description": "Take your React skills to the next level with our advanced workshop in Manchester, UK. Dive deep into topics such as Redux, GraphQL, and performance optimization. Suitable for experienced developers.",
       "location": "Manchester, UK",
+      "description": "Take your React skills to the next level with our advanced workshop in Manchester, UK. Dive deep into topics such as Redux, GraphQL, and performance optimization. Suitable for experienced developers.",
       "price": "£900 - £1100",
       "provider": {
         "name": "DevHub",
